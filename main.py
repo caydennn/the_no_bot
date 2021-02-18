@@ -73,6 +73,10 @@ def main():
     dispatcher.add_handler(MessageHandler(
         Filters.text & ~Filters.command, say_no))
 
+
+
+    print("Starting...")
+
     # Start the Bot
     updater.start_polling()
 
