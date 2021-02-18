@@ -64,7 +64,7 @@ def main():
     print(TELEGRAM_TOKEN)
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
-    updater = Updater(TELEGRAM_TOKEN)
+    updater = Updater(TELEGRAM_TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
