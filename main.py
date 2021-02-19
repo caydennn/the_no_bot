@@ -43,19 +43,19 @@ def say_no(update: Update, context: CallbackContext) -> None:
             print("filbert sent the msg")
             update.message.reply_text("No")
 
-    if (user['username'].lower() == "ohyamn"):
-        increaseCount(currentCount)
+    # if (user['username'].lower() == "ohyamn"):
+    #     increaseCount(currentCount)
 
-        if (currentCount % 5 == 0):
-            print("yanlin sent the msg")
-            update.message.reply_text("hi yanlin")
+    #     if (currentCount % 5 == 0):
+    #         print("yanlin sent the msg")
+    #         update.message.reply_text("hi yanlin")
 
-    if (user['username'].lower() == "yongta"):
-        increaseCount(currentCount)
+    # if (user['username'].lower() == "yongta"):
+    #     increaseCount(currentCount)
 
-        if (currentCount % 5 == 0):
-            print("yt sent the msg")
-            update.message.reply_text("hi yt")
+    #     if (currentCount % 5 == 0):
+    #         print("yt sent the msg")
+    #         update.message.reply_text("hi yt")
 
 
 def main():
