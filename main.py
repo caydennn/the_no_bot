@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 from os.path import join, dirname
 import uwuify
+import random
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -38,7 +39,16 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
         print(data)
 
     """Echo the user message."""
-    user = update.message.from_user
+
+    try:
+        user = update.message.from_user
+
+     except Exception as e:
+        print("Error:")
+        print(e)
+        increaseCount[currentCount]
+        return
+    
 
     if (user['username'].lower() == "folkloreee"):
         increaseCount(currentCount)
@@ -65,6 +75,13 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
 
         if (currentCount % 5 == 0):
             update.message.reply_text("neRD sIA")
+
+    if (user['username'].lower() == "yongta"):
+        increaseCount(currentCount)
+
+        if (currentCount % 5 == 0):
+            choices = ['lunch?', 'DINNer', 'SUPPPERR?']
+            update.message.reply_text(random.choice(choices))
     # if (user['username'].lower() == "ohyamn"):
     #     increaseCount(currentCount)
 
