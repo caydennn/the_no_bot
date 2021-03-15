@@ -5,6 +5,8 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 import os
 from dotenv import load_dotenv
 from os.path import join, dirname
+import uwuify
+
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
@@ -14,6 +16,7 @@ logging.basicConfig(
 )
 
 logger = logging.getLogger(__name__)
+
 
 def increaseCount(currentCount):
     currentCount += 1
@@ -26,7 +29,8 @@ def increaseCount(currentCount):
 
     return
 
-def say_no(update: Update, context: CallbackContext) -> None:
+
+def say_stuff(update: Update, context: CallbackContext) -> None:
 
     with open('data.json') as f:
         data = json.load(f)
@@ -43,6 +47,24 @@ def say_no(update: Update, context: CallbackContext) -> None:
             print("filbert sent the msg")
             update.message.reply_text("No")
 
+    if (user['username'].lower() == "feliceho"):
+        increaseCount(currentCount)
+
+        if (currentCount % 5 == 0):
+            uwuMessage = uwuify.uwu(update.message.text)
+            update.message.reply_text(uwuMessage)
+
+    if (user['username'].lower() == "Joeloooooong"):
+        increaseCount(currentCount)
+
+        if (currentCount % 5 == 0):
+            update.message.reply_text("YASS KINGGGG")
+
+    if (user['username'].lower() == "nicolefranc"):
+        increaseCount(currentCount)
+
+        if (currentCount % 5 == 0):
+            update.message.reply_text("neRD sIA")
     # if (user['username'].lower() == "ohyamn"):
     #     increaseCount(currentCount)
 
@@ -60,7 +82,7 @@ def say_no(update: Update, context: CallbackContext) -> None:
 
 def main():
     count = 0
-    TELEGRAM_TOKEN=os.environ.get("TOKEN")
+    TELEGRAM_TOKEN = os.environ.get("TOKEN")
     print(TELEGRAM_TOKEN)
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
@@ -71,9 +93,7 @@ def main():
 
     # on noncommand i.e message - echo the message on Telegram
     dispatcher.add_handler(MessageHandler(
-        Filters.text & ~Filters.command, say_no))
-
-
+        Filters.text & ~Filters.command, say_stuff))
 
     print("Starting...")
 
