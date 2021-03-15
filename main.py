@@ -43,12 +43,11 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
     try:
         user = update.message.from_user
 
-     except Exception as e:
+    except Exception as e:
         print("Error:")
         print(e)
         increaseCount[currentCount]
         return
-    
 
     if (user['username'].lower() == "folkloreee"):
         increaseCount(currentCount)
