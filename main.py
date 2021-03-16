@@ -47,7 +47,6 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
     except Exception as e:
         print("Error:")
         print(e)
-        increaseCount[currentCount]
         return
 
     random_number = random.random()
