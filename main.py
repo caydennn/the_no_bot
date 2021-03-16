@@ -32,6 +32,7 @@ def increaseCount(currentCount):
 
 
 def say_stuff(update: Update, context: CallbackContext) -> None:
+    percentage_chance = 0.25
 
     with open('data.json') as f:
         data = json.load(f)
@@ -49,51 +50,33 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
         increaseCount[currentCount]
         return
 
-    if (user['username'].lower() == "folkloreee"):
-        increaseCount(currentCount)
+    random_number = random.random()
+    print("Bot Speaks if < {} : {}".format(percentage_chance, random_number))
+    if random_number <= percentage_chance:
 
-        if (currentCount % 5 == 0):
-            print("filbert sent the msg")
+        if (user['username'].lower() == "folkloreee"):
+            increaseCount(currentCount)
             update.message.reply_text("No")
 
-    if (user['username'].lower() == "feliceho"):
-        increaseCount(currentCount)
-
-        if (currentCount % 5 == 0):
+        if (user['username'].lower() == "feliceho"):
+            increaseCount(currentCount)
             uwuMessage = uwuify.uwu(update.message.text)
-            update.message.reply_text(uwuMessage)
+            if (uwuMessage != update.message.text):
+                update.message.reply_text(uwuMessage)
 
-    if (user['username'].lower() == "Joeloooooong"):
-        increaseCount(currentCount)
-
-        if (currentCount % 5 == 0):
+        if (user['username'].lower() == "joeloooooong"):
+            increaseCount(currentCount)
             update.message.reply_text("YASS KINGGGG")
 
-    if (user['username'].lower() == "nicolefranc"):
-        increaseCount(currentCount)
-
-        if (currentCount % 5 == 0):
+        if (user['username'].lower() == "nicolefranc"):
+            increaseCount(currentCount)
             update.message.reply_text("neRD sIA")
 
-    if (user['username'].lower() == "yongta"):
-        increaseCount(currentCount)
-
-        if (currentCount % 5 == 0):
-            choices = ['lunch?', 'DINNer', 'SUPPPERR?']
-            update.message.reply_text(random.choice(choices))
-    # if (user['username'].lower() == "ohyamn"):
-    #     increaseCount(currentCount)
-
-    #     if (currentCount % 5 == 0):
-    #         print("yanlin sent the msg")
-    #         update.message.reply_text("hi yanlin")
-
-    # if (user['username'].lower() == "yongta"):
-    #     increaseCount(currentCount)
-
-    #     if (currentCount % 5 == 0):
-    #         print("yt sent the msg")
-    #         update.message.reply_text("hi yt")
+        if (user['username'].lower() == "yongta"):
+            increaseCount(currentCount)
+            # choices = ['lunch?', 'DINNer', 'SUPPPERR?']
+            # update.message.reply_text(random.choice(choices))
+            update.message.reply_text("oCay-den")
 
 
 def main():
