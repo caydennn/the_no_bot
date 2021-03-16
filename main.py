@@ -32,7 +32,7 @@ def increaseCount(currentCount):
 
 
 def say_stuff(update: Update, context: CallbackContext) -> None:
-    percentage_chance = 0.25
+    percentage_chance = 0.15
 
     with open('data.json') as f:
         data = json.load(f)
