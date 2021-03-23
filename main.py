@@ -53,11 +53,11 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
     print("Bot Speaks if < {} : {}".format(percentage_chance, random_number))
     if random_number <= percentage_chance:
 
-        if (user['username'].lower() == "folkloreee"):
+        if (user['username'].lower() == "feliceho"): #folkloreee
             increaseCount(currentCount)
             update.message.reply_text("No")
 
-        if (user['username'].lower() == "feliceho"):
+        if (user['username'].lower() == "folkloreee"): #feliceho
             increaseCount(currentCount)
             uwuMessage = uwuify.uwu(update.message.text)
             if (uwuMessage != update.message.text):
@@ -75,7 +75,7 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
             increaseCount(currentCount)
             # choices = ['lunch?', 'DINNer', 'SUPPPERR?']
             # update.message.reply_text(random.choice(choices))
-            update.message.reply_text("oCay-den")
+            update.message.reply_text("yes president 💦")
 
 
 def main():
