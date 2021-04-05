@@ -55,13 +55,14 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
 
         if (user['username'].lower() == "feliceho"): #folkloreee
             increaseCount(currentCount)
-            update.message.reply_text("No")
+            update.message.reply_text("私の友人はギターのように言いたいです")
 
         if (user['username'].lower() == "folkloreee"): #feliceho
             increaseCount(currentCount)
-            uwuMessage = uwuify.uwu(update.message.text)
-            if (uwuMessage != update.message.text):
-                update.message.reply_text(uwuMessage)
+            update.message.reply_text("no.")
+            # uwuMessage = uwuify.uwu(update.message.text)
+            # if (uwuMessage != update.message.text):
+            #     update.message.reply_text(uwuMessage)
 
         if (user['username'].lower() == "joeloooooong"):
             increaseCount(currentCount)
