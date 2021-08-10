@@ -82,7 +82,6 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
 def main():
     count = 0
     TELEGRAM_TOKEN = os.environ.get("TOKEN")
-    print(TELEGRAM_TOKEN)
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
     updater = Updater(TELEGRAM_TOKEN, use_context=True)
