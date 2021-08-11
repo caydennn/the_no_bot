@@ -81,6 +81,7 @@ def say_stuff(update: Update, context: CallbackContext) -> None:
 
 def main():
     count = 0
+    URL = os.environ.get("URL")
     TELEGRAM_TOKEN = os.environ.get("TOKEN")
     """Start the bot."""
     # Create the Updater and pass it your bot's token.
@@ -96,12 +97,16 @@ def main():
     print("Starting...")
 
     # Start the Bot
-    updater.start_polling()
+    # updater.start_polling()
 
     # Run the bot until you press Ctrl-C or the process receives SIGINT,
     # SIGTERM or SIGABRT. This should be used most of the time, since
     # start_polling() is non-blocking and will stop the bot gracefully.
-    updater.idle()
+    # updater.idle()
+
+    webhook_url = f'{URL}{TELEGRAM_TOKEN}'
+    print('Webhook url: {}'.format(webhook_url))
+    updater.bot.setWebhook(webhook_url)
 
 
 if __name__ == '__main__':
