@@ -5,7 +5,7 @@ from os.path import join, dirname
 from flask import Flask, request
 import random
 
-import bot_logic.responses
+from bot_logic import responses
 import telegram
 
 
@@ -68,19 +68,19 @@ def respond():
 	print("Bot Speaks if < {} : {}".format(percentage_chance, random_number))
 	if random_number <= percentage_chance:
 		if user == "feliceho":
-			feliceResponses(update)
+			responses.feliceResponses(update)
 
 		if user == "folkloreee":
-			filbertResponses(update)
+			responses.filbertResponses(update)
 		
 		if user == "joeloooooong":
-			joelResponses(update)
+			responses.joelResponses(update)
 			 
 		if user == "yongta":
-			ytResponses(update)
+			responses.ytResponses(update)
 		
 		if user == "nicolefranc":
-			nicoleResponses(update)
+			responses.nicoleResponses(update)
 	
 	#    else:
 	#        try:
