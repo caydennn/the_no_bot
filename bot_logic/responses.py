@@ -1,5 +1,5 @@
-import bot
-def feliceResponses(update):
+
+def feliceResponses(update, bot):
     chat_id = update.message.chat.id
     update.message.reply_text("えっと、、私の友達は君のことが本当に好きなので")
     bot.sendAudio(chat_id=chat_id, audio=open('assets/audio/felice.wav', 'rb') , title='felice: えっと、、私の友達は君のことが本当に好きなので')

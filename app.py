@@ -68,7 +68,7 @@ def respond():
 	print("Bot Speaks if < {} : {}".format(percentage_chance, random_number))
 	if random_number <= percentage_chance:
 		if user == "feliceho":
-			responses.feliceResponses(update)
+			responses.feliceResponses(update, bot)
 
 		if user == "folkloreee":
 			responses.filbertResponses(update)
