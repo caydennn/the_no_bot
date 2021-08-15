@@ -1,3 +1,4 @@
+import bot
 def feliceResponses(update):
     chat_id = update.message.chat.id
     update.message.reply_text("えっと、、私の友達は君のことが本当に好きなので")
@@ -5,7 +6,7 @@ def feliceResponses(update):
     return 'ok'
 
 
-def filbertResponse(update):
+def filbertResponses(update):
     update.message.reply_text("no.")
     return 'ok'
 
